@@ -1,0 +1,79 @@
+# my shell script (calculator.sh)
+
+
+# my script
+
+
+#!/bin/bash
+
+# Ask the user to enter two numbers
+echo "Enter the first number:"
+read num1
+
+echo "Enter the second number:"
+read num2
+
+# Ask the user to choose an operation
+echo "Choose an operation (+, -, *, /):"
+read operation
+
+# Perform the calculation based on the chosen operation
+case $operation in
+  +)
+    result=$(echo "$num1 + $num2" | bc)
+    ;;
+  -)
+    result=$(echo "$num1 - $num2" | bc)
+    ;;
+  *)
+    result=$(echo "$num1 * $num2" | bc)
+    ;;
+  /)
+    result=$(echo "scale=2; $num1 / $num2" | bc)
+    ;;
+  *)
+    echo "Invalid operation"
+    exit 1
+    ;;
+esac
+
+# Display the result
+echo "The result of $num1 $operation $num2 is: $result")
+
+
+# to make the command executable (chmod +x calculator.sh)
+
+
+# ran the script with (./calculator.sh)
+
+
+# results
+
+
+➜  learning_git git:(assignment_sub) ✗ cd ..
+➜  git_training cd ..
+➜  class cd shell_scripting 
+➜  shell_scripting ./calculator.sh
+Enter the first number:
+50
+Enter the second number:
+40
+Choose an operation (+, -, *, /):
++
+The result of 50 + 40 is: 90
+➜  shell_scripting ./calculator.sh
+Enter the first number:
+100
+Enter the second number:
+40
+Choose an operation (+, -, *, /):
+-
+The result of 100 - 40 is: 60
+➜  shell_scripting ./calculator.sh
+Enter the first number:
+30
+Enter the second number:
+30
+Choose an operation (+, -, *, /):
+*
+The result of 30 * 30 is: 900
