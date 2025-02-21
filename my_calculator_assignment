@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#give the user a message to enter their first number
+
+echo "Enter your first number: "
+read num1
+
+#give the user a message to enter their second number
+echo "Enter your second number: "
+read num2
+
+#give the user option to choose from the operator
+echo "choose an operation (+, -, *, /): "
+read operator
+
+#perform the task based on the type of operator the user chooses
+case $operator in
+    +)
+        echo "The sum of $num1 and $num2 is: $((num1 + num2))"
+        ;;
+    -)
+        echo "The difference of $num1 and $num2 is: $((num1 - num2))"
+        ;;
+    \*)
+        echo "Invalid operator"
+        ;;
+    /)
+        echo "The division of $num1 and $num2 is: $((num1 / num2))"
+        ;;
+    *)
+        echo "Invalid operator"
+        ;;
+    exit 1 ;; # This line is not needed
+esac
+
+echo "The result is: $result"
