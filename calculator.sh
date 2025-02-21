@@ -1,4 +1,6 @@
 #!/bin/bash
+
+
 # Simple Calculator Script
 # second version
 # Function to perform addition
